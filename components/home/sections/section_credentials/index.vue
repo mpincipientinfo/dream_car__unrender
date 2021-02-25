@@ -51,8 +51,8 @@ export default {
       subtitle: this.sectionCredentialsDataProp.subtitle,
       credentials: this.sectionCredentialsDataProp.credentials,
       options: {
-        infinite: true,
-        type: "loop",
+        infinite: false,
+        type: "slide",
         perPage: 3,
         dots: false,
         perMove: 1,
