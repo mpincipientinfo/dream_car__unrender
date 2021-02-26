@@ -13,11 +13,13 @@
           <b-list-group horizontal>
             <nuxt-link
               to="#"
-              class="hover-text-decoration-none d-flex align-self-center"
+              class="links hover-text-decoration-none d-flex align-self-center"
               v-for="(item, index) in navBarList"
               :key="index"
             >
-              <b-list-group-item class="bg-transparent border-0 text-uppercase">
+              <b-list-group-item
+                class="bg-transparent border-0 text-uppercase title"
+              >
                 {{ item.title }}
               </b-list-group-item>
             </nuxt-link>
@@ -49,6 +51,26 @@ export default {
 };
 </script>
 <style scoped>
+.links {
+  padding-left: 25px;
+  padding-right: 25px;
+  font-family: Open Sans, sans-serif !important;
+  font-size: 1.0625rem;
+  font-weight: 500 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  color: #fff !important;
+}
+.title {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
+.list-group .list-group-item {
+  padding: 0.75rem 0rem;
+}
 .header {
   width: 100%;
   padding: 0 7% 7px;

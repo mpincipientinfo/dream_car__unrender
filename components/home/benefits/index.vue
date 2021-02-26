@@ -37,16 +37,19 @@ export default {
 .benefit_parent {
   background-color: #182540;
   color: #fff;
+  padding-bottom: 80px;
 }
 .subtitle {
   font-size: 1.125rem;
   font-weight: 600;
   padding-top: 140px;
   font-family: "Mulish", sans-serif;
+  margin-bottom: 8px !important;
 }
 .title {
   font-family: Lora, serif !important;
   font-size: 2.625rem;
   padding-bottom: 60px;
+  padding-top: 20px !important;
 }
 </style>

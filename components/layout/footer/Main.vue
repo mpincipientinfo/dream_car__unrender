@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5 mt-5 pb-5 mb-5">
+  <div class="footer">
     <div class="d-flex flex-column">
       <div class="home__logo text-center">
         <div class="text-center">
@@ -11,7 +11,7 @@
           </div>
           <p class="title mt-3 pt-1 mb-3">{{ title }}</p>
           <!-- page links -->
-          <LinkList :prop="pageLinks" class="text-uppercase" />
+          <LinkList :prop="pageLinks" class="text-uppercase pt-40" />
           <!--legal links -->
           <LinkList :prop="legalLinks" />
         </div>
@@ -47,5 +47,9 @@ export default {
   color: #182540;
   font-family: Open Sans, sans-serif !important;
   font-size: 1.0625rem;
+}
+.pt-40 {
+  padding-top: 40px;
+  padding-bottom: 12px;
 }
 </style>

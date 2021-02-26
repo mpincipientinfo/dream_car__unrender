@@ -1,6 +1,6 @@
 <template>
-  <div class="social_parent pb-5 pt-4">
-    <div class="container mt-5">
+  <div class="social_parent">
+    <div class="container">
       <b-row>
         <div
           class="col-lg-4 text-center"
@@ -46,5 +46,7 @@ export default {
 <style scoped>
 .social_parent {
   background: #f8f9fa;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
 }
 </style>

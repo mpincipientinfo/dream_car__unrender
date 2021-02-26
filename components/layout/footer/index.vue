@@ -8,8 +8,8 @@
     />
     <Socials />
     <!-- copyright -->
-    <div class="copyright text-center pt-2 pb-2">
-      <h6 class="my-1 copyright_text">
+    <div class="copyright text-center">
+      <h6 class="copyright_text">
         ©copyright 2021 M2-wunschauto . All Rights Reserved
       </h6>
     </div>
@@ -44,10 +44,15 @@ export default {
 .copyright_text {
   font-family: Open Sans, sans-serif !important;
   font-size: 0.875rem;
-  font-weight: lighter;
+  margin-bottom: 0px;
   color: #fff;
 }
 .copyright {
   background-color: #182540;
+  padding-top: 11px;
+  padding-bottom: 10px;
+}
+.footer {
+  padding: 100px 0px;
 }
 </style>
