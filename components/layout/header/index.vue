@@ -14,16 +14,16 @@
             <nuxt-link
               to="#"
               class="hover-text-decoration-none d-flex align-self-center"
-              v-for="(navBar, index) in navBarList"
+              v-for="(item, index) in navBarList"
               :key="index"
             >
               <b-list-group-item class="bg-transparent border-0 text-uppercase">
-                {{ navBar.title }}
+                {{ item.title }}
               </b-list-group-item>
             </nuxt-link>
             <nuxt-link to="#" class="hover-text-decoration-none">
               <b-list-group-item class="bg-transparent border-0">
-                <b-button class="btn-red">{{ navBarButton }}</b-button>
+                <b-button class="btn-red">{{ button }}</b-button>
               </b-list-group-item>
             </nuxt-link>
           </b-list-group>
@@ -34,22 +34,16 @@
 </template>
 <script>
 export default {
-  props: ["headerDataProp"],
-  data() {
-    return {
-      imgUrl: this.headerDataProp.imgUrl,
-      navBarList: this.headerDataProp.navBarList,
-      navBarButton: this.headerDataProp.navBarButton
-    };
-  },
-  watch: {
-    headerDataProp: {
-      deep: true,
-      handler(newVal, oldVal) {
-        this.imgUrl = newVal.imgUrl;
-        this.navBarList = newVal.navBarList;
-        this.navBarButton = newVal.navBarButton;
-      }
+  props: ["sectionNavbar"],
+  computed: {
+    imgUrl() {
+      return this.sectionNavbar.image.url;
+    },
+    navBarList() {
+      return this.sectionNavbar.image.page_links;
+    },
+    button() {
+      return this.sectionNavbar.image.button;
     }
   }
 };

@@ -1,23 +1,22 @@
 <template>
   <div>
-    <Header :headerDataProp="headerData" />
+    <Header v-if="data.section_navbar" :sectionNavbar="data.section_navbar" />
     <Nuxt />
-    <Footer :footerDataProp="footerData" />
+    <Footer v-if="data.section_footer" :sectionFooter="data.section_footer" />
   </div>
 </template>
 <script>
 import params from "@/config/params.js";
-import Header from "@/components/common/header";
-import Footer from "@/components/common/footer";
+import Header from "@/components/layout/header";
+import Footer from "@/components/layout/footer";
 export default {
   components: {
     Header,
-    Footer
+    Footer,
   },
   data() {
     return {
-      headerData: {},
-      footerData: {}
+      data: {},
     };
   },
   created() {
@@ -28,18 +27,8 @@ export default {
       const { data } = await this.$axios.get(
         params.baseUrl + "/payload/shared.json"
       );
-      this.headerData = {
-        imgUrl: data.section_navbar.image.url,
-        navBarList: data.section_navbar.image.page_links,
-        navBarButton: data.section_navbar.image.button
-      };
-      this.footerData = {
-        imgUrl: data.section_footer.image.url,
-        title: data.section_footer.title,
-        pageLinks: data.section_footer.page_links,
-        legalLinks: data.section_footer.legal_links
-      };
-    }
-  }
+      this.data = data;
+    },
+  },
 };
 </script>

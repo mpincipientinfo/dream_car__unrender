@@ -101,24 +101,19 @@
 </template>
 <script>
 export default {
-  props: ["footerDataProp"],
-  data() {
-    return {
-      imgUrl: this.footerDataProp.imgUrl,
-      title: this.footerDataProp.title,
-      pageLinks: this.footerDataProp.pageLinks,
-      legalLinks: this.footerDataProp.legalLinks
-    };
-  },
-  watch: {
-    footerDataProp: {
-      deep: true,
-      handler(newVal, olVal) {
-        this.imgUrl = newVal.imgUrl;
-        this.title = newVal.title;
-        this.pageLinks = newVal.pageLinks;
-        this.legalLinks = newVal.legalLinks;
-      }
+  props: ["sectionFooter"],
+  computed: {
+    imgUrl() {
+      return this.sectionFooter.image.url;
+    },
+    title() {
+      return this.sectionFooter.title;
+    },
+    pageLinks() {
+      return this.sectionFooter.page_links;
+    },
+    legalLinks() {
+      return this.sectionFooter.legal_links;
     }
   }
 };

@@ -44,12 +44,9 @@
 </template>
 <script>
 export default {
-  props: ["sectionCredentialsDataProp"],
+  props: ["sectionReferenzen"],
   data() {
     return {
-      title: this.sectionCredentialsDataProp.title,
-      subtitle: this.sectionCredentialsDataProp.subtitle,
-      credentials: this.sectionCredentialsDataProp.credentials,
       options: {
         infinite: false,
         type: "slide",
@@ -61,14 +58,15 @@ export default {
       }
     };
   },
-  watch: {
-    sectionCredentialsDataProp: {
-      deep: true,
-      handler(newVal, oldVal) {
-        this.title = newVal.title;
-        this.subtitle = newVal.subtitle;
-        this.credentials = newVal.referenzen;
-      }
+  computed: {
+    credentials() {
+      return this.sectionReferenzen.referenzen;
+    },
+    title() {
+      return this.sectionReferenzen.title;
+    },
+    subtitle() {
+      return this.sectionReferenzen.subtitle;
     }
   }
 };

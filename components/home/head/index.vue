@@ -36,28 +36,25 @@
 </template>
 <script>
 export default {
-  props: ["sectionHeadDataProp"],
-  data() {
-    return {
-      backgroundImageUrl: this.sectionHeadDataProp.backgroundImageUrl,
-      imageUrl: this.sectionHeadDataProp.imageUrl,
-      title: this.sectionHeadDataProp.title,
-      subtitle: this.sectionHeadDataProp.subtitle,
-      button1: this.sectionHeadDataProp.button1,
-      button2: this.sectionHeadDataProp.button2
-    };
-  },
-  watch: {
-    sectionHeadDataProp: {
-      deep: true,
-      handler(newVal, oldval) {
-        this.backgroundImageUrl = newVal.backgroundImageUrl;
-        this.imageUrl = newVal.imageUrl;
-        this.title = newVal.title;
-        this.subtitle = newVal.subtitle;
-        this.button1 = newVal.button1;
-        this.button2 = newVal.button2;
-      }
+  props: ["data"],
+  computed: {
+    backgroundImageUrl() {
+      return this.data.background_image.url;
+    },
+    imageUrl() {
+      return this.data.image.url;
+    },
+    title() {
+      return this.data.title;
+    },
+    subtitle() {
+      return this.data.subtitle;
+    },
+    button1() {
+      return this.data.button_1;
+    },
+    button2() {
+      return this.data.button_2;
     }
   }
 };

@@ -3,23 +3,31 @@
     <div
       class="d-flex align-items-center justify-content-center justify-content-md-start"
     >
-      <h4 class="count">{{ benefitCount }}</h4>
+      <h4 class="count">{{ count }}</h4>
       <div class="ml-2">
-        <b-img :src="benefit.image.url"></b-img>
+        <b-img :src="imageUrl"></b-img>
       </div>
     </div>
-    <h6 class="title pt-4">{{ benefit.title }}</h6>
-    <p class="description pt-4">{{ benefit.description }}</p>
+    <h6 class="title pt-4">{{ title }}</h6>
+    <p class="description pt-4">{{ description }}</p>
   </div>
 </template>
 <script>
 export default {
-  props: ["benefitProp", "benefitCountProp"],
-  data() {
-    return {
-      benefit: this.benefitProp,
-      benefitCount: this.benefitCountProp
-    };
+  props: ["data", "index"],
+  computed: {
+    count() {
+      return this.index;
+    },
+    imageUrl() {
+      return this.data.image.url;
+    },
+    title() {
+      return this.data.title;
+    },
+    description() {
+      return this.data.description;
+    }
   }
 };
 </script>

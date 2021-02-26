@@ -19,24 +19,16 @@
 </template>
 <script>
 export default {
-  props: ["sectionContactDataProp"],
-  data() {
-    return {
-      backgroundImageUrl: this.sectionContactDataProp.backgroundImageUrl,
-      title: this.sectionContactDataProp.title,
-      description: this.sectionContactDataProp.description,
-      button: this.sectionContactDataProp.button
-    };
-  },
-  watch: {
-    sectionContactDataProp: {
-      deep: true,
-      handler(newVal, oldval) {
-        this.backgroundImageUrl = newVal.backgroundImageUrl;
-        this.title = newVal.title;
-        this.description = newVal.description;
-        this.button = newVal.button;
-      }
+  props: ["sectionContact"],
+  computed: {
+    backgroundImageUrl() {
+      return this.sectionContact.background_image.url;
+    },
+    title() {
+      return this.sectionContact.title;
+    },
+    button() {
+      return this.sectionContact.button;
     }
   }
 };
