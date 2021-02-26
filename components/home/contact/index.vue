@@ -19,16 +19,16 @@
 </template>
 <script>
 export default {
-  props: ["sectionContact"],
+  props: ["prop"],
   computed: {
     backgroundImageUrl() {
-      return this.sectionContact.background_image.url;
+      return this.prop.background_image.url;
     },
     title() {
-      return this.sectionContact.title;
+      return this.prop.title;
     },
     button() {
-      return this.sectionContact.button;
+      return this.prop.button;
     }
   }
 };

@@ -8,13 +8,13 @@
 <script>
 import Service from "./Service";
 export default {
-  props: ["sectionServices"],
+  props: ["prop"],
   components: {
     Service
   },
   computed: {
     services() {
-      return this.sectionServices;
+      return this.prop;
     }
   }
 };

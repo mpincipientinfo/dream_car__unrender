@@ -36,25 +36,25 @@
 </template>
 <script>
 export default {
-  props: ["data"],
+  props: ["prop"],
   computed: {
     backgroundImageUrl() {
-      return this.data.background_image.url;
+      return this.prop.background_image.url;
     },
     imageUrl() {
-      return this.data.image.url;
+      return this.prop.image.url;
     },
     title() {
-      return this.data.title;
+      return this.prop.title;
     },
     subtitle() {
-      return this.data.subtitle;
+      return this.prop.subtitle;
     },
     button1() {
-      return this.data.button_1;
+      return this.prop.button_1;
     },
     button2() {
-      return this.data.button_2;
+      return this.prop.button_2;
     }
   }
 };

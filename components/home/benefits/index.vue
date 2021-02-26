@@ -7,28 +7,28 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col v-for="(benefit, index) in benefits" :key="index">
-          <BenefitComponent :data="benefit" :index="index + 1" />
+          <Benefit :data="benefit" :index="index + 1" />
         </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
 <script>
-import BenefitComponent from "./BenefitComponent";
+import Benefit from "./Benefit";
 export default {
-  props: ["sectionVorteile"],
+  props: ["prop"],
   components: {
-    BenefitComponent
+    Benefit
   },
   computed: {
     title() {
-      return this.sectionVorteile.title;
+      return this.prop.title;
     },
     subtitle() {
-      return this.sectionVorteile.subtitle;
+      return this.prop.subtitle;
     },
     benefits() {
-      return this.sectionVorteile.vorteile;
+      return this.prop.vorteile;
     }
   }
 };

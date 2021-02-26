@@ -34,16 +34,16 @@
 </template>
 <script>
 export default {
-  props: ["sectionNavbar"],
+  props: ["prop"],
   computed: {
     imgUrl() {
-      return this.sectionNavbar.image.url;
+      return this.prop.image.url;
     },
     navBarList() {
-      return this.sectionNavbar.image.page_links;
+      return this.prop.image.page_links;
     },
     button() {
-      return this.sectionNavbar.image.button;
+      return this.prop.image.button;
     }
   }
 };

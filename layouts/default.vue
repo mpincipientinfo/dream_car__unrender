@@ -1,8 +1,10 @@
 <template>
   <div>
-    <Header v-if="data.section_navbar" :sectionNavbar="data.section_navbar" />
-    <Nuxt />
-    <Footer v-if="data.section_footer" :sectionFooter="data.section_footer" />
+    <div v-if="notEmptyObject(data)">
+      <Header :prop="data.section_navbar" />
+      <Nuxt />
+      <Footer :prop="data.section_footer" />
+    </div>
   </div>
 </template>
 <script>
@@ -12,14 +14,14 @@ import Footer from "@/components/layout/footer";
 export default {
   components: {
     Header,
-    Footer,
+    Footer
   },
   data() {
     return {
-      data: {},
+      data: {}
     };
   },
-  created() {
+  mounted() {
     this.fetchData();
   },
   methods: {
@@ -28,7 +30,7 @@ export default {
         params.baseUrl + "/payload/shared.json"
       );
       this.data = data;
-    },
-  },
+    }
+  }
 };
 </script>
