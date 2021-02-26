@@ -11,7 +11,7 @@
           v-for="(link, index) in links"
           :key="index"
         >
-          <div class="list-group-item  list-item bg-transparent border-0 p-0">
+          <div class="list-group-item list-item bg-transparent border-0 p-0">
             {{ link.title }}
           </div>
         </a>

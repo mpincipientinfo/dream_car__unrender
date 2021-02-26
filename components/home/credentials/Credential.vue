@@ -1,10 +1,7 @@
 <template>
   <div class="credential_card p-sm-4 p-3 text-center text-sm-left">
     <div>
-      <img
-        :src="imageUrl"
-        class="image img-fluid rounded-circle lazyLoad isLoaded"
-      />
+      <img :src="imageUrl" class="image img-fluid rounded-circle" />
     </div>
     <div class="price">
       <p>{{ price }}</p>

@@ -25,11 +25,8 @@
             {{ button }}
           </a>
         </div>
-        <div
-          class="d-flex align-items-start flex-column bd-highlight "
-          v-if="price"
-        >
-          <div class="bd-highlight">
+        <div class="d-flex align-items-start flex-column" v-if="price">
+          <div>
             <div class="price_tag">
               <b-img src="@/assets/images/price_tag.jpeg"></b-img>
               <p class="price_tag_text">PRIES</p>

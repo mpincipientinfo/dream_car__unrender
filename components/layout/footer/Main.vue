@@ -1,10 +1,10 @@
 <template>
   <div class="footer">
     <div class="d-flex flex-column">
-      <div class="home__logo text-center">
+      <div class="text-center">
         <div class="text-center">
           <div class="mb-3">
-            <img alt="" class="img-fluid lazyLoad isLoaded" :src="imgUrl" />
+            <img alt="image" class="img-fluid" :src="imgUrl" />
           </div>
           <div>
             <img src="@/assets/images/logoline.f940fa9.png" alt="Image" />
