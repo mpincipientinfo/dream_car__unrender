@@ -30,7 +30,15 @@ export default {
         dots: false,
         perMove: 1,
         pagination: false,
-        width: "100%"
+        width: "100%",
+        breakpoints: {
+          768: {
+            perPage: 2
+          },
+          640: {
+            perPage: 1
+          }
+        }
       }
     };
   }

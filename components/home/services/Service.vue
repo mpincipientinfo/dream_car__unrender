@@ -5,7 +5,12 @@
     <b-col lg="6" class="d-none d-md-block p-0 " v-if="index % 2 != 0">
       <img :src="imageUrl" class="w-100 fluid image h-100" />
     </b-col>
-    <b-col lg="6" sm="12" class="p-0 padd_left_12_per pt-5 col-sm-12 col-lg-6">
+    <b-col
+      lg="6"
+      sm="12"
+      class="p-0 custom_padding pt-5 col-sm-12 col-lg-6"
+      style="position: relative;"
+    >
       <h2 class="pb-3 title">{{ title }}</h2>
       <div v-for="(list, index) in list" :key="index">
         <b-img src="@/assets/images/tick.e546d3c.svg" class="float-left">
@@ -68,13 +73,10 @@ export default {
 };
 </script>
 <style scoped>
-.padd_left_12_per {
-  padding-left: 64px !important;
+.custom_padding {
   padding-top: 80px !important;
   padding-bottom: 72px !important;
-}
-.row.m-0:first-child .padd_left_12_per {
-  padding-left: 14.4% !important;
+  padding-left: 10.4% !important;
 }
 .list_title {
   font-size: 1.0625rem;
@@ -89,7 +91,7 @@ export default {
 .pt-24 {
   padding-top: 24px;
 }
-a.btn-red.button.btn.btn-red-expand {
+.btn-red-expand {
   border-radius: 60px !important;
   background: linear-gradient(90deg, #e50612, #730309) !important;
   color: #fff !important;
@@ -112,9 +114,6 @@ a.btn-red.button.btn.btn-red-expand {
   width: 262px;
   letter-spacing: 2px;
 }
-.d-none.d-md-block.p-0.h-652.col-lg-6 {
-  position: relative;
-}
 .h-652 img.w-100.fluid.h-100 {
   object-fit: cover;
   position: absolute;
@@ -136,7 +135,6 @@ a.btn-red.button.btn.btn-red-expand {
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
-  padding-bottom: 20px !important;
 }
 .title {
   font-family: Lora, serif !important;
@@ -161,5 +159,13 @@ a.btn-red.button.btn.btn-red-expand {
   font-size: 2.625rem;
   font-weight: 500;
   color: #182540;
+}
+@media screen and (min-width: 992px) and (max-width: 1366px) {
+  .custom_padding {
+    padding-left: 10.4% !important;
+  }
+  .btn-red-expand:hover {
+    width: 240px;
+  }
 }
 </style>

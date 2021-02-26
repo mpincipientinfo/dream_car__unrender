@@ -6,7 +6,7 @@
     <h2 class="title pt-4 pb-6">{{ title }}</h2>
     <b-container class="bv-example-row">
       <b-row>
-        <b-col v-for="(benefit, index) in benefits" :key="index">
+        <b-col lg="3" sm="6" v-for="(benefit, index) in benefits" :key="index">
           <Benefit :data="benefit" :index="index + 1" />
         </b-col>
       </b-row>
